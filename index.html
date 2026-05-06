@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4月 AI创新与应用月度汇报</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f7fa;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #2c3e50;
+        }
+        .report-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 28px;
+            color: #1a202c;
+        }
+        .section-title i {
+            margin-right: 14px;
+            padding: 12px;
+            background: #6366f1;
+            border-radius: 14px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+        /* 叠放容器 */
+        .massive-stack {
+            position: relative;
+            height: 800px; 
+            margin: 30px 0;
+            background: #fcfdfe;
+            border-radius: 24px;
+            border: 1px dashed #cbd5e1;
+        }
+        .stack-item {
+            position: absolute;
+            border: 4px solid white;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            background: #fff;
+        }
+        .stack-item:hover {
+            transform: scale(1.15) rotate(0deg) !important;
+            z-index: 500 !important;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+        }
+        .tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: #eef2ff;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #4f46e5;
+            margin-bottom: 16px;
+        }
+        video {
+            border-radius: 24px;
+            background: #000;
+            width: 100%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            margin-bottom: 24px;
+        }
+        .img-full {
+            width: 100%;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<div class="report-container">
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-end mb-12 px-6 gap-4 border-b pb-8">
+        <div>
+            <div class="text-indigo-600 font-bold tracking-[0.2em] mb-2 text-sm">AI CREATIVE DESIGN CENTER</div>
+            <h1 class="text-5xl font-black text-slate-900 leading-tight tracking-tight">4月 AI创新与应用<br>月度汇报</h1>
+        </div>
+        <div class="text-right">
+            <div class="bg-indigo-600 text-white px-8 py-3 rounded-2xl text-xl font-bold shadow-xl shadow-indigo-100">
+                2024.04
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. 巴拉智绘 Logo -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-fingerprint"></i>
+            <span>一、 品牌底座：巴拉智绘 Logo 体系发布</span>
+        </div>
+        <p class="text-slate-600 mb-8 leading-relaxed text-lg">
+            巴拉智绘 Logo 正式完成定稿。设计强调数字化与艺术的融合，采用极简几何线条勾勒，作为AI创意工具集的统一视觉标识，本月已完成全场景视觉延展。
+        </p>
+        <div class="space-y-6">
+            <img src="logo_1.png" class="img-full shadow-md" alt="Logo 1">
+            <img src="logo_2.png" class="img-full shadow-md" alt="Logo 2">
+            <img src="logo_3.png" class="img-full shadow-md" alt="Logo 3">
+            <img src="logo_4.png" class="img-full shadow-md" alt="Logo 4">
+        </div>
+    </div>
+
+    <!-- 2. 426 订货会 -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-bolt"></i>
+            <span>二、 效率标杆：426 订货会虚拟换装</span>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+            <div class="bg-indigo-50 p-6 rounded-3xl text-center">
+                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">制作时间</div>
+                <div class="text-3xl font-black text-indigo-900">3 Days</div>
+            </div>
+            <div class="bg-indigo-50 p-6 rounded-3xl text-center">
+                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">AI服装Look</div>
+                <div class="text-3xl font-black text-indigo-900">334 Pcs</div>
+            </div>
+            <div class="bg-indigo-50 p-6 rounded-3xl text-center">
+                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">单产品图</div>
+                <div class="text-3xl font-black text-indigo-900">190 Pcs</div>
+            </div>
+            <div class="bg-indigo-50 p-6 rounded-3xl text-center">
+                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">资产总额</div>
+                <div class="text-3xl font-black text-indigo-900">500+</div>
+            </div>
+        </div>
+        
+        <div class="tag"># 海量虚拟Look资产堆叠</div>
+        <div class="massive-stack" id="fairStack"></div>
+    </div>
+
+    <!-- 3. 玩具羽绒专项 -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-car-side"></i>
+            <span>三、 业务赋能：玩具羽绒 - 赛车主题定调</span>
+        </div>
+        <div class="mb-10">
+            <div class="bg-slate-50 p-8 rounded-3xl border-l-8 border-indigo-500 mb-8">
+                <p class="text-lg text-slate-700 font-medium">“从海量摸索到精准定调：初期经历多个方向的探索与推翻，最终锁定‘赛车’核心视觉元素，实现产品生命力的数字化重塑。”</p>
+            </div>
+            
+            <div class="tag">赛车主题精选 Look</div>
+            <div class="grid grid-cols-5 gap-3 mb-10">
+                <script>
+                    for(let i=1; i<=10; i++) {
+                        document.write(`<img src="toy_look_${i}.png" class="rounded-xl shadow-lg aspect-[9/16] object-cover hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'">`);
+                    }
+                </script>
+            </div>
+
+            <div class="tag">单品图库资产累积</div>
+            <div class="massive-stack" id="toyProdStack" style="height: 600px;"></div>
+
+            <div class="tag">项目宣导视频</div>
+            <video controls>
+                <source src="toy_video.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- 4. 女童 6D 快反 -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-wand-magic-sparkles"></i>
+            <span>四、 业务补强：女童 6D 快反项目</span>
+        </div>
+        
+        <div class="space-y-12">
+            <div>
+                <div class="tag">主视觉海报</div>
+                <img src="girls_poster.png" class="w-full rounded-3xl shadow-2xl border-8 border-slate-50" alt="Poster">
+            </div>
+
+            <div>
+                <div class="tag">系列 Look 展示</div>
+                <div class="grid grid-cols-4 gap-4">
+                    <script>
+                        for(let i=1; i<=8; i++) {
+                            document.write(`<img src="girls_look_${i}.png" class="w-full rounded-2xl shadow-lg aspect-[9/16] object-cover" onerror="this.style.display='none'">`);
+                        }
+                    </script>
+                </div>
+            </div>
+
+            <div>
+                <div class="tag">单款单品平铺展示</div>
+                <div class="grid grid-cols-4 gap-4 bg-pink-50 p-6 rounded-3xl">
+                    <script>
+                        for(let i=1; i<=11; i++) {
+                            document.write(`<img src="girls_prod_${i}.jpeg" class="w-full rounded-2xl shadow-md aspect-square object-cover bg-white p-2" onerror="this.style.display='none'">`);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. IP 小游戏 -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-gamepad"></i>
+            <span>五、 数字化交互：微信小游戏 UI 全新升级</span>
+        </div>
+        <p class="text-slate-600 text-lg mb-8">
+            巴拉IP小游戏视觉体系全面翻新。目前正处于工信部审核阶段，预计于 <span class="text-indigo-600 font-bold underline decoration-indigo-200 decoration-4">5月25日温州线下活动</span> 正式发布上线。
+        </p>
+        
+        <div class="tag">游戏大图预览</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <script>
+                for(let i=1; i<=8; i++) {
+                    document.write(`<div class="shadow-2xl rounded-3xl overflow-hidden hover:scale-105 transition-transform"><img src="game_ui_${i}.png" class="w-full" onerror="this.parentElement.remove()"></div>`);
+                }
+            </script>
+        </div>
+
+        <div class="tag">线下展示效果</div>
+        <div class="flex justify-center">
+            <img src="game_standee.jpeg" class="w-1/2 rounded-3xl shadow-xl" alt="Standee">
+        </div>
+    </div>
+
+    <!-- 6. 平面设计与视频补强 -->
+    <div class="card">
+        <div class="section-title">
+            <i class="fas fa-images"></i>
+            <span>六、 辅助设计：工服平面与用品组视频</span>
+        </div>
+        
+        <div class="mb-12">
+            <div class="tag">工服平面设计</div>
+            <div class="space-y-6">
+                <script>
+                    for(let i=1; i<=6; i++) {
+                        document.write(`<img src="uniform_${i}.png" class="w-full rounded-2xl shadow-md" onerror="this.style.display='none'">`);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="tag">用品组视频补充</div>
+        <div class="space-y-8">
+            <video controls>
+                <source src="supplies_video_1.mp4" type="video/mp4">
+            </video>
+            <video controls>
+                <source src="supplies_video_2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center text-slate-400 text-xs mt-16 pb-12">
+        <div class="flex justify-center gap-4 mb-4">
+            <div class="w-12 h-[1px] bg-slate-300 self-center"></div>
+            <span class="uppercase tracking-[0.3em] font-bold">AI CREATIVE DESIGN CENTER</span>
+            <div class="w-12 h-[1px] bg-slate-300 self-center"></div>
+        </div>
+        © 2024 巴拉创意中心 · 4月 AI 月度汇报 · 内部绝密
+    </div>
+</div>
+
+<script>
+    function renderMassiveStack(containerId, fileArray, config = {}) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const width = config.width || 200;
+        const containerHeight = container.offsetHeight;
+
+        fileArray.forEach((file, index) => {
+            const img = document.createElement('img');
+            img.src = file;
+            img.className = 'stack-item';
+            img.style.width = width + 'px';
+            
+            const left = 2 + (Math.random() * 78);
+            const top = 10 + (Math.random() * (containerHeight - 350));
+            const rotate = (Math.random() * 40) - 20;
+
+            img.style.left = left + '%';
+            img.style.top = top + 'px';
+            img.style.transform = `rotate(${rotate}deg)`;
+            img.style.zIndex = index;
+            
+            img.onerror = function() { this.remove(); };
+            container.appendChild(img);
+        });
+    }
+
+    // 1. 订货会堆叠
+    const fairFiles = Array.from({length: 44}, (_, i) => `fair_look_${i+1}.png`);
+    renderMassiveStack('fairStack', fairFiles, { width: 190 });
+
+    // 2. 玩具羽绒堆叠
+    const toyFilesUnique = [
+        'toy_prod_1.png', 'toy_prod_2.png', 'toy_prod_3.png', 'toy_prod_4.png', 'toy_prod_5.png',
+        'toy_prod_6.png', 'toy_prod_7.png', 'toy_prod_8.png', 'toy_prod_9.png', 'toy_prod_10.png',
+        'toy_prod_11.png', 'toy_prod_12.png', 'toy_prod_13.png', 'toy_prod_14.png', 'toy_prod_15.png',
+        'toy_prod_16.png', 'toy_prod_17.png', 'toy_prod_18.png', 'toy_prod_19.png', 'toy_prod_20.png',
+        'toy_prod_21.png', 'toy_prod_22.png', 'toy_prod_23.png', 'toy_prod_24.png', 'toy_prod_25.png',
+        'toy_prod_26.png', 'toy_prod_27.png', 'toy_prod_28.png', 'toy_prod_29.png', 'toy_prod_30.png',
+        'toy_prod_31.jpeg', 'toy_prod_32.jpeg', 'toy_prod_33.jpeg', 'toy_prod_34.jpeg', 'toy_prod_35.jpeg',
+        'toy_prod_36.jpeg', 'toy_prod_37.jpeg', 'toy_prod_38.jpeg', 'toy_prod_39.jpeg', 'toy_prod_40.jpeg',
+        '羽绒服女1.png', '羽绒服女2.png'
+    ];
+    renderMassiveStack('toyProdStack', toyFilesUnique, { width: 150 });
+</script>
+
+</body>
+</html>
