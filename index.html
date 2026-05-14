@@ -3,58 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4月 AI创新与应用月度汇报</title>
+    <title>3-4月 AI创新与应用双月汇总汇报 - 巴拉巴拉创意中心</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         body {
-            background-color: #f4f7fa;
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            color: #2c3e50;
+            font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: #f4f7fb;
+            color: #334155;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
         }
-        .report-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 50px 20px;
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 1);
+            box-shadow: 0 10px 40px -10px rgba(148, 163, 184, 0.2);
+            transition: all 0.3s ease;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
         }
-        .card {
-            background: white;
-            border-radius: 32px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            overflow: hidden;
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
         .section-title {
             display: flex;
             align-items: center;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            margin-bottom: 28px;
-            color: #1a202c;
+            margin-bottom: 2rem;
+            color: #1e293b;
         }
+
         .section-title i {
-            margin-right: 14px;
-            padding: 12px;
-            background: #6366f1;
-            border-radius: 14px;
+            margin-right: 1rem;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            border-radius: 1.2rem;
             color: white;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.3);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        /* 叠放容器 */
+
+        .tag {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: #eef2ff;
+            border-radius: 0.7rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #4f46e5;
+            margin-bottom: 1.2rem;
+            border: 1px solid #e0e7ff;
+        }
+
+        /* 叠放容器：4月排版风格 */
         .massive-stack {
             position: relative;
-            height: 800px; 
-            margin: 30px 0;
+            height: 700px;
             background: #fcfdfe;
-            border-radius: 24px;
+            border-radius: 1.5rem;
             border: 1px dashed #cbd5e1;
+            overflow: hidden;
+            margin-top: 1rem;
         }
         .stack-item {
             position: absolute;
             border: 4px solid white;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-            border-radius: 10px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            border-radius: 12px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
             background: #fff;
@@ -64,226 +99,287 @@
             z-index: 500 !important;
             box-shadow: 0 25px 60px rgba(0,0,0,0.25);
         }
-        .tag {
-            display: inline-block;
-            padding: 6px 16px;
-            background: #eef2ff;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #4f46e5;
-            margin-bottom: 16px;
+
+        /* Swiper 科技感滑动 */
+        .tech-swiper { width: 100%; padding: 20px 0; overflow: hidden; }
+        .tech-swiper .swiper-slide {
+            transition: 0.4s;
+            opacity: 0.4;
+            transform: scale(0.85);
+            border-radius: 1.2rem;
+            overflow: hidden;
+            width: 280px;
+            aspect-ratio: 3/4;
+            background: #fff;
+            border: 1px solid #e2e8f0;
         }
+        .tech-swiper .swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.25);
+            border-color: #0ea5e9;
+        }
+
         video {
-            border-radius: 24px;
+            border-radius: 2rem;
             background: #000;
             width: 100%;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            margin-bottom: 24px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+            margin-bottom: 2rem;
         }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
         .img-full {
             width: 100%;
-            border-radius: 20px;
-            margin-bottom: 24px;
+            border-radius: 1.5rem;
+            margin-bottom: 2rem;
             object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
     </style>
 </head>
-<body>
+<body class="py-12 px-4 sm:px-6">
 
-<div class="report-container">
-    <!-- Header -->
-    <div class="flex flex-col md:flex-row justify-between items-end mb-12 px-6 gap-4 border-b pb-8">
+<div class="max-w-5xl mx-auto space-y-10">
+    <!-- Header (统一 3月样式) -->
+    <header class="glass-card flex flex-col md:flex-row justify-between items-start md:items-center">
         <div>
-            <div class="text-indigo-600 font-bold tracking-[0.2em] mb-2 text-sm">AI CREATIVE DESIGN CENTER</div>
-            <h1 class="text-5xl font-black text-slate-900 leading-tight tracking-tight">4月 AI创新与应用<br>月度汇报</h1>
+            <h1 class="text-3xl md:text-4xl font-black tracking-tight mb-2 text-gradient">3-4月 AI创新与应用汇总汇报</h1>
+            <p class="text-slate-500 font-medium">涵盖平台建设、视觉赋能、快反项目及互动营销全链路成果</p>
         </div>
-        <div class="text-right">
-            <div class="bg-indigo-600 text-white px-8 py-3 rounded-2xl text-xl font-bold shadow-xl shadow-indigo-100">
-                2024.04
+        <div class="mt-6 md:mt-0 px-6 py-3 bg-blue-50 text-blue-600 rounded-2xl font-bold border border-blue-100 flex items-center shadow-sm">
+            <i class="fa-solid fa-layer-group mr-2"></i> 巴拉巴拉AI创意设计团队
+        </div>
+    </header>
+
+    <!-- 一、品牌基建：系统启动与 Logo 定稿 -->
+    <div class="glass-card">
+        <div class="section-title">
+            <i class="fas fa-microchip"></i>
+            <span>一、 核心基建：巴拉智绘系统与视觉体系</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="space-y-4">
+                <div class="tag">平台研发启动 (3月成果)</div>
+                <p class="text-slate-600 leading-relaxed text-sm">
+                    AI 辅助服装设计与资产聚合平台<strong>「巴拉智绘」</strong>正式立项。系统旨在重塑设计流，单款设计周期将从 <span class="text-rose-500 font-bold">2周</span> 压缩至 <span class="text-emerald-500 font-bold">10-30分钟</span>，盘活 5TB 供应链面料资产。
+                </p>
+                <img src="zhihui_demo.png" class="img-full border" alt="智绘系统演示" onerror="this.style.display='none'">
+            </div>
+            <div class="space-y-4">
+                <div class="tag">视觉标识定稿 (4月更新)</div>
+                <p class="text-slate-600 leading-relaxed text-sm">
+                    4月正式完成官方Logo设计及场景延展。采用科技蓝与极简线条勾勒，为AI工具集建立了统一且具辨识度的视觉名片。
+                </p>
+                <div class="space-y-4">
+                    <img src="logo_1.png" class="rounded-xl shadow-sm border w-full" alt="Logo 1" onerror="this.style.display='none'">
+                    <img src="logo_2.png" class="rounded-xl shadow-sm border w-full" alt="Logo 2" onerror="this.style.display='none'">
+                    <img src="logo_3.png" class="rounded-xl shadow-sm border w-full" alt="Logo 3" onerror="this.style.display='none'">
+                    <img src="logo_4.png" class="rounded-xl shadow-sm border w-full" alt="Logo 4" onerror="this.style.display='none'">
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- 1. 巴拉智绘 Logo -->
-    <div class="card">
-        <div class="section-title">
-            <i class="fas fa-fingerprint"></i>
-            <span>一、 品牌底座：巴拉智绘 Logo 体系发布</span>
-        </div>
-        <p class="text-slate-600 mb-8 leading-relaxed text-lg">
-            巴拉智绘 Logo 正式完成定稿。设计强调数字化与艺术的融合，采用极简几何线条勾勒，作为AI创意工具集的统一视觉标识，本月已完成全场景视觉延展。
-        </p>
-        <div class="space-y-6">
-            <img src="logo_1.png" class="img-full shadow-md" alt="Logo 1">
-            <img src="logo_2.png" class="img-full shadow-md" alt="Logo 2">
-            <img src="logo_3.png" class="img-full shadow-md" alt="Logo 3">
-            <img src="logo_4.png" class="img-full shadow-md" alt="Logo 4">
-        </div>
-    </div>
-
-    <!-- 2. 426 订货会 -->
-    <div class="card">
+    <!-- 二、效率革命：426 订货会 (4月核心) -->
+    <div class="glass-card">
         <div class="section-title">
             <i class="fas fa-bolt"></i>
             <span>二、 效率标杆：426 订货会虚拟换装</span>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-            <div class="bg-indigo-50 p-6 rounded-3xl text-center">
-                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">制作时间</div>
+            <div class="bg-indigo-50/50 p-6 rounded-3xl text-center border border-indigo-100">
+                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">制作周期</div>
                 <div class="text-3xl font-black text-indigo-900">3 Days</div>
             </div>
-            <div class="bg-indigo-50 p-6 rounded-3xl text-center">
-                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">AI服装Look</div>
+            <div class="bg-indigo-50/50 p-6 rounded-3xl text-center border border-indigo-100">
+                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">AI 换装 Look</div>
                 <div class="text-3xl font-black text-indigo-900">334 Pcs</div>
             </div>
-            <div class="bg-indigo-50 p-6 rounded-3xl text-center">
+            <div class="bg-indigo-50/50 p-6 rounded-3xl text-center border border-indigo-100">
                 <div class="text-xs text-indigo-400 font-bold uppercase mb-1">单产品图</div>
                 <div class="text-3xl font-black text-indigo-900">190 Pcs</div>
             </div>
-            <div class="bg-indigo-50 p-6 rounded-3xl text-center">
-                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">资产总额</div>
+            <div class="bg-indigo-50/50 p-6 rounded-3xl text-center border border-indigo-100">
+                <div class="text-xs text-indigo-400 font-bold uppercase mb-1">总产出</div>
                 <div class="text-3xl font-black text-indigo-900">500+</div>
             </div>
         </div>
-        
-        <div class="tag"># 海量虚拟Look资产堆叠</div>
-        <div class="massive-stack" id="fairStack"></div>
+        <div class="tag"># 虚拟Look资产海量散落展示</div>
+        <div class="massive-stack" id="fairStack" style="height: 800px;"></div>
     </div>
 
-    <!-- 3. 玩具羽绒专项 -->
-    <div class="card">
+    <!-- 三、业务赋能：3D、物理模拟与快反项目 -->
+    <div class="glass-card">
         <div class="section-title">
-            <i class="fas fa-car-side"></i>
-            <span>三、 业务赋能：玩具羽绒 - 赛车主题定调</span>
-        </div>
-        <div class="mb-10">
-            <div class="bg-slate-50 p-8 rounded-3xl border-l-8 border-indigo-500 mb-8">
-                <p class="text-lg text-slate-700 font-medium">“从海量摸索到精准定调：初期经历多个方向的探索与推翻，最终锁定‘赛车’核心视觉元素，实现产品生命力的数字化重塑。”</p>
-            </div>
-            
-            <div class="tag">赛车主题精选 Look</div>
-            <div class="grid grid-cols-5 gap-3 mb-10">
-                <script>
-                    for(let i=1; i<=10; i++) {
-                        document.write(`<img src="toy_look_${i}.png" class="rounded-xl shadow-lg aspect-[9/16] object-cover hover:scale-105 transition-transform duration-300" onerror="this.style.display='none'">`);
-                    }
-                </script>
-            </div>
-
-            <div class="tag">单品图库资产累积</div>
-            <div class="massive-stack" id="toyProdStack" style="height: 600px;"></div>
-
-            <div class="tag">项目宣导视频</div>
-            <video controls>
-                <source src="toy_video.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
-
-    <!-- 4. 女童 6D 快反 -->
-    <div class="card">
-        <div class="section-title">
-            <i class="fas fa-wand-magic-sparkles"></i>
-            <span>四、 业务补强：女童 6D 快反项目</span>
+            <i class="fas fa-cube"></i>
+            <span>三、 业务赋能：3D模拟与动态视觉产出</span>
         </div>
         
-        <div class="space-y-12">
-            <div>
-                <div class="tag">主视觉海报</div>
-                <img src="girls_poster.png" class="w-full rounded-3xl shadow-2xl border-8 border-slate-50" alt="Poster">
-            </div>
-
-            <div>
-                <div class="tag">系列 Look 展示</div>
-                <div class="grid grid-cols-4 gap-4">
-                    <script>
-                        for(let i=1; i<=8; i++) {
-                            document.write(`<img src="girls_look_${i}.png" class="w-full rounded-2xl shadow-lg aspect-[9/16] object-cover" onerror="this.style.display='none'">`);
-                        }
-                    </script>
+        <!-- 用品组视频汇聚 (3支视频) -->
+        <div class="mb-12">
+            <div class="tag">用品组：全周期动态视频展示 (共3支)</div>
+            <div class="space-y-6">
+                <div class="group">
+                    <p class="text-xs text-slate-400 font-bold mb-2 ml-2">3月产出：首支帽子动态视频</p>
+                    <video autoplay loop muted playsinline><source src="accessories_hat.mp4" type="video/mp4"></video>
                 </div>
-            </div>
-
-            <div>
-                <div class="tag">单款单品平铺展示</div>
-                <div class="grid grid-cols-4 gap-4 bg-pink-50 p-6 rounded-3xl">
-                    <script>
-                        for(let i=1; i<=11; i++) {
-                            document.write(`<img src="girls_prod_${i}.jpeg" class="w-full rounded-2xl shadow-md aspect-square object-cover bg-white p-2" onerror="this.style.display='none'">`);
-                        }
-                    </script>
+                <div class="group">
+                    <p class="text-xs text-slate-400 font-bold mb-2 ml-2">4月产出：用品视频补充 01</p>
+                    <video controls><source src="supplies_video_1.mp4" type="video/mp4"></video>
+                </div>
+                <div class="group">
+                    <p class="text-xs text-slate-400 font-bold mb-2 ml-2">4月产出：用品视频补充 02</p>
+                    <video controls><source src="supplies_video_2.mp4" type="video/mp4"></video>
                 </div>
             </div>
         </div>
+
+        <hr class="my-12 border-slate-100">
+
+        <!-- 3D 轮播 (3月核心成果) -->
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+                <div class="tag">Ghost Model 3D 试拍库</div>
+                <div class="swiper tech-swiper ghost-swiper">
+                    <div class="swiper-wrapper" id="ghostWrapper"></div>
+                </div>
+                <p class="text-center text-[10px] text-slate-400 mt-2">← 左右滑动查看完整 8 张 3:4 素材 →</p>
+            </div>
+            <div>
+                <div class="tag">Home线：袜子物理模拟打样</div>
+                <div class="swiper tech-swiper home-swiper">
+                    <div class="swiper-wrapper" id="homeWrapper"></div>
+                </div>
+                <p class="text-center text-[10px] text-slate-400 mt-2">← 左右滑动查看完整 25 张 3:4 素材 →</p>
+            </div>
+        </div>
+
+        <hr class="my-12 border-slate-100">
+
+        <!-- 女童快反 (4月核心成果) -->
+        <div class="mb-12">
+            <div class="tag">业务补强：女童 6D 快反项目专栏</div>
+            <div class="space-y-12">
+                <div>
+                    <p class="text-xs text-slate-400 font-bold mb-3">主视觉海报</p>
+                    <img src="girls_poster.png" class="w-full rounded-[2.5rem] shadow-2xl border-8 border-white" alt="Poster" onerror="this.style.display='none'">
+                </div>
+
+                <div>
+                    <p class="text-xs text-slate-400 font-bold mb-3">系列 Look 铺开展示</p>
+                    <div class="grid grid-cols-4 gap-4">
+                        <script>
+                            for(let i=1; i<=8; i++) {
+                                document.write(`<img src="girls_look_${i}.png" class="w-full rounded-2xl shadow-lg aspect-[9/16] object-cover" onerror="this.style.display='none'">`);
+                            }
+                        </script>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-xs text-slate-400 font-bold mb-3">单款单品规整展示 (3行平铺)</p>
+                    <div class="grid grid-cols-4 gap-4 bg-pink-50/50 p-6 rounded-[2.5rem] border border-pink-100">
+                        <script>
+                            for(let i=1; i<=11; i++) {
+                                document.write(`<img src="girls_prod_${i}.jpeg" class="w-full rounded-2xl shadow-md aspect-square object-cover bg-white p-2" onerror="this.style.display='none'">`);
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 面料专项视频 -->
+        <div class="bg-indigo-900 rounded-[3rem] p-10 flex flex-col md:flex-row items-center gap-10">
+            <div class="flex-1 space-y-5">
+                <div class="tag bg-white/20 text-white border-white/20">面料专项：软软牛仔</div>
+                <h4 class="text-3xl font-bold text-white tracking-tight">高精度材质动态渲染</h4>
+                <p class="text-blue-100 text-sm leading-relaxed opacity-80">
+                    专为社媒定制的竖屏短视频。通过AI模拟真实面料下垂感与折痕，精准传达材质的亲肤质感，有效降低打样沟通成本。
+                </p>
+            </div>
+            <div class="max-w-[240px] shadow-2xl rounded-[2rem] overflow-hidden border-8 border-white/10">
+                <video autoplay loop muted playsinline><source src="soft_denim.mp4" type="video/mp4"></video>
+            </div>
+        </div>
     </div>
 
-    <!-- 5. IP 小游戏 -->
-    <div class="card">
+    <!-- 四、交互、地图与小游戏升级 -->
+    <div class="glass-card">
         <div class="section-title">
             <i class="fas fa-gamepad"></i>
-            <span>五、 数字化交互：微信小游戏 UI 全新升级</span>
+            <span>四、 数字化交互：快闪地图与小游戏升级</span>
         </div>
-        <p class="text-slate-600 text-lg mb-8">
-            巴拉IP小游戏视觉体系全面翻新。目前正处于工信部审核阶段，预计于 <span class="text-indigo-600 font-bold underline decoration-indigo-200 decoration-4">5月25日温州线下活动</span> 正式发布上线。
-        </p>
         
-        <div class="tag">游戏大图预览</div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <script>
-                for(let i=1; i<=8; i++) {
-                    document.write(`<div class="shadow-2xl rounded-3xl overflow-hidden hover:scale-105 transition-transform"><img src="game_ui_${i}.png" class="w-full" onerror="this.parentElement.remove()"></div>`);
-                }
-            </script>
-        </div>
-
-        <div class="tag">线下展示效果</div>
-        <div class="flex justify-center">
-            <img src="game_standee.jpeg" class="w-1/2 rounded-3xl shadow-xl" alt="Standee">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+            <!-- 小游戏 (4月更新) -->
+            <div class="space-y-6">
+                <div class="tag">微信小游戏 UI 全新升级 (4月)</div>
+                <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    4月配合全新 Logo 体系完成 UI 全面翻新。目前工信部审核中，预计于 <span class="text-indigo-600 font-bold underline decoration-indigo-200 decoration-4">5.25 温州线下活动</span> 正式发布上线。
+                </p>
+                <div class="grid grid-cols-4 gap-2 mb-6">
+                    <script>
+                        for(let i=1; i<=8; i++) {
+                            document.write(`<img src="game_ui_${i}.png" class="rounded-lg shadow-md hover:scale-105 transition-transform" onerror="this.style.display='none'">`);
+                        }
+                    </script>
+                </div>
+                <div class="text-center">
+                    <p class="text-xs text-slate-400 mb-2 italic">线下展示：立牌示意图</p>
+                    <img src="game_standee.jpeg" class="w-2/3 rounded-2xl mx-auto shadow-xl" alt="Standee" onerror="this.style.display='none'">
+                </div>
+            </div>
+            
+            <!-- 滨江地图 (3月) -->
+            <div class="space-y-6">
+                <div class="tag">滨江快闪店交互地图 (3月)</div>
+                <div class="relative w-full rounded-[3.5rem] overflow-hidden shadow-2xl border-4 border-slate-900 bg-slate-800">
+                    <!-- 手机框资产 -->
+                    <img src="phone.png" class="relative z-20 w-full h-auto pointer-events-none" alt="Phone Frame">
+                    <!-- 地图内容区 -->
+                    <div class="absolute inset-0 z-10 overflow-x-auto overflow-y-hidden no-scrollbar flex items-center">
+                        <img src="binjiang_map.webp" style="height: 1060px; max-height: 98.7%;" class="w-auto max-w-none block" alt="Binjiang Map">
+                    </div>
+                </div>
+                <p class="text-center text-[10px] text-slate-400 font-medium"><i class="fas fa-arrows-left-right mr-1"></i> 请在手机屏幕区域左右滑动浏览长图</p>
+            </div>
         </div>
     </div>
 
-    <!-- 6. 平面设计与视频补强 -->
-    <div class="card">
+    <!-- 五、平面设计：工服系列 (4月核心成果) -->
+    <div class="glass-card">
         <div class="section-title">
-            <i class="fas fa-images"></i>
-            <span>六、 辅助设计：工服平面与用品组视频</span>
+            <i class="fas fa-pen-nib"></i>
+            <span>五、 其他辅助：全系列工服平面设计</span>
         </div>
-        
-        <div class="mb-12">
-            <div class="tag">工服平面设计</div>
-            <div class="space-y-6">
-                <script>
-                    for(let i=1; i<=6; i++) {
-                        document.write(`<img src="uniform_${i}.png" class="w-full rounded-2xl shadow-md" onerror="this.style.display='none'">`);
-                    }
-                </script>
-            </div>
-        </div>
-
-        <div class="tag">用品组视频补充</div>
-        <div class="space-y-8">
-            <video controls>
-                <source src="supplies_video_1.mp4" type="video/mp4">
-            </video>
-            <video controls>
-                <source src="supplies_video_2.mp4" type="video/mp4">
-            </video>
+        <div class="space-y-6">
+            <script>
+                for(let i=1; i<=6; i++) {
+                    document.write(`<img src="uniform_${i}.png" class="img-full border shadow-sm" onerror="this.style.display='none'">`);
+                }
+            </script>
         </div>
     </div>
 
     <!-- Footer -->
-    <div class="text-center text-slate-400 text-xs mt-16 pb-12">
+    <footer class="text-center text-slate-400 text-xs py-12">
         <div class="flex justify-center gap-4 mb-4">
             <div class="w-12 h-[1px] bg-slate-300 self-center"></div>
-            <span class="uppercase tracking-[0.3em] font-bold">AI CREATIVE DESIGN CENTER</span>
+            <span class="tracking-[0.3em] font-bold">AI CREATIVE DESIGN CENTER</span>
             <div class="w-12 h-[1px] bg-slate-300 self-center"></div>
         </div>
-        © 2024 巴拉创意中心 · 4月 AI 月度汇报 · 内部绝密
-    </div>
+        © 2024 巴拉创意中心 · 3-4月 AI 创新成果双月双汇总汇报 · 内部绝密
+    </footer>
 </div>
 
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+    // 渲染订货会堆叠 (保持4月逻辑，高度增加到 800px)
     function renderMassiveStack(containerId, fileArray, config = {}) {
         const container = document.getElementById(containerId);
         if (!container) return;
@@ -310,23 +406,26 @@
         });
     }
 
-    // 1. 订货会堆叠
+    // 1. 订货会 44 张散落
     const fairFiles = Array.from({length: 44}, (_, i) => `fair_look_${i+1}.png`);
     renderMassiveStack('fairStack', fairFiles, { width: 190 });
 
-    // 2. 玩具羽绒堆叠
-    const toyFilesUnique = [
-        'toy_prod_1.png', 'toy_prod_2.png', 'toy_prod_3.png', 'toy_prod_4.png', 'toy_prod_5.png',
-        'toy_prod_6.png', 'toy_prod_7.png', 'toy_prod_8.png', 'toy_prod_9.png', 'toy_prod_10.png',
-        'toy_prod_11.png', 'toy_prod_12.png', 'toy_prod_13.png', 'toy_prod_14.png', 'toy_prod_15.png',
-        'toy_prod_16.png', 'toy_prod_17.png', 'toy_prod_18.png', 'toy_prod_19.png', 'toy_prod_20.png',
-        'toy_prod_21.png', 'toy_prod_22.png', 'toy_prod_23.png', 'toy_prod_24.png', 'toy_prod_25.png',
-        'toy_prod_26.png', 'toy_prod_27.png', 'toy_prod_28.png', 'toy_prod_29.png', 'toy_prod_30.png',
-        'toy_prod_31.jpeg', 'toy_prod_32.jpeg', 'toy_prod_33.jpeg', 'toy_prod_34.jpeg', 'toy_prod_35.jpeg',
-        'toy_prod_36.jpeg', 'toy_prod_37.jpeg', 'toy_prod_38.jpeg', 'toy_prod_39.jpeg', 'toy_prod_40.jpeg',
-        '羽绒服女1.png', '羽绒服女2.png'
-    ];
-    renderMassiveStack('toyProdStack', toyFilesUnique, { width: 150 });
+    // 2. 动态生成 Swiper 幻灯片
+    const ghostW = document.getElementById('ghostWrapper');
+    for(let i=1; i<=8; i++) {
+        let n = i.toString().padStart(2, '0');
+        ghostW.innerHTML += `<div class="swiper-slide"><img src="ghost_model_${n}.png" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400?text=Ghost+${n}'"></div>`;
+    }
+
+    const homeW = document.getElementById('homeWrapper');
+    for(let i=1; i<=25; i++) {
+        let n = i.toString().padStart(2, '0');
+        homeW.innerHTML += `<div class="swiper-slide"><img src="home_sim_${n}.png" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400?text=Home+${n}'"></div>`;
+    }
+
+    // 初始化 Swiper
+    new Swiper('.ghost-swiper', { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 15, loop: true, loopedSlides: 4 });
+    new Swiper('.home-swiper', { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 15, loop: true, loopedSlides: 4 });
 </script>
 
 </body>
