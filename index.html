@@ -75,7 +75,7 @@
             border: 1px solid #e0e7ff;
         }
 
-        /* 叠放容器：4月排版风格 */
+        /* 叠放容器 */
         .massive-stack {
             position: relative;
             height: 800px;
@@ -176,7 +176,6 @@
                     <img src="zhihui_demo.png" class="img-full border" alt="智绘系统界面预览" onerror="this.style.display='none'">
                 </div>
 
-                <!-- 修改：品牌视觉规范图片改为垂直排列 -->
                 <div class="space-y-6">
                     <div class="tag bg-indigo-50 text-indigo-600 border-indigo-100">品牌视觉规范</div>
                     <div class="flex flex-col gap-6">
@@ -249,19 +248,19 @@
         <!-- 3D 轮播 -->
         <div class="space-y-20 mb-20">
             <div>
-                <div class="tag">Ghost Model 3D 试拍库 (3:4)</div>
+                <div class="tag">Ghost Model 3D 试拍库</div>
                 <div class="swiper tech-swiper ghost-swiper">
                     <div class="swiper-wrapper" id="ghostWrapper"></div>
                 </div>
-                <p class="text-center text-[11px] text-slate-400 mt-4"><i class="fas fa-arrows-left-right mr-2"></i>左右滑动查看完整 8 张素材库</p>
+                <p class="text-center text-[11px] text-slate-400 mt-4"><i class="fas fa-arrows-left-right mr-2"></i>左右滑动查看素材资产库</p>
             </div>
             
             <div>
-                <div class="tag">Home线：袜子物理模拟打样 (3:4)</div>
+                <div class="tag">Home线：袜子物理模拟打样</div>
                 <div class="swiper tech-swiper home-swiper">
                     <div class="swiper-wrapper" id="homeWrapper"></div>
                 </div>
-                <p class="text-center text-[11px] text-slate-400 mt-4"><i class="fas fa-arrows-left-right mr-2"></i>左右滑动查看完整 25 张模拟资产</p>
+                <p class="text-center text-[11px] text-slate-400 mt-4"><i class="fas fa-arrows-left-right mr-2"></i>左右滑动查看模拟资产库</p>
             </div>
         </div>
 
@@ -301,16 +300,19 @@
         </div>
 
         <!-- 面料专项 -->
-        <div class="bg-indigo-900 rounded-[3.5rem] p-12 flex flex-col items-center gap-10 text-center">
+        <div class="bg-slate-50 rounded-[3.5rem] p-12 flex flex-col items-center gap-10 text-center border border-slate-200">
             <div class="space-y-6">
-                <div class="tag bg-white/20 text-white border-white/20 mb-0">面料专项：软软牛仔</div>
-                <h4 class="text-4xl font-bold text-white tracking-tight">高精度材质动态渲染</h4>
-                <p class="text-blue-100 text-lg leading-relaxed opacity-80 max-w-2xl mx-auto">
+                <div class="tag bg-indigo-50 text-indigo-600 border-indigo-100 mb-0">面料专项：软软牛仔</div>
+                <h4 class="text-4xl font-bold text-slate-800 tracking-tight">高精度材质动态渲染</h4>
+                <p class="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto">
                     专为社媒定制的竖屏短视频。通过AI模拟真实面料下垂感与折痕，精准传达材质的亲肤质感，有效降低打样沟通成本。
                 </p>
             </div>
-            <div class="max-w-[300px] shadow-2xl rounded-[2.5rem] overflow-hidden border-8 border-white/10">
-                <video autoplay loop muted playsinline><source src="soft_denim.mp4" type="video/mp4"></video>
+            <!-- 9:16 视频容器 -->
+            <div class="max-w-[300px] w-full shadow-2xl rounded-[2.5rem] overflow-hidden border-8 border-white bg-black aspect-[9/16]">
+                <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                    <source src="soft_denim.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </div>
@@ -357,7 +359,8 @@
                 <div class="relative w-full max-w-4xl mx-auto rounded-[4rem] overflow-hidden shadow-2xl border-4 border-slate-900 bg-slate-800">
                     <img src="phone.png" class="relative z-20 w-full h-auto pointer-events-none" alt="Phone Frame">
                     <div class="absolute inset-0 z-10 overflow-x-auto overflow-y-hidden no-scrollbar flex items-center">
-                        <img src="binjiang_map.webp" style="height: 1060px; max-height: 98.7%;" class="w-auto max-w-none block" alt="Map">
+                        <!-- 已修正为 .png 后缀 -->
+                        <img src="binjiang_map.png" style="height: 1060px; max-height: 98.7%;" class="w-auto max-w-none block" alt="Map">
                     </div>
                 </div>
                 <p class="text-center text-slate-400 font-medium"><i class="fas fa-arrows-left-right mr-3"></i>左右滑动手机内部区域浏览长图内容</p>
@@ -423,20 +426,41 @@
     const fairFiles = Array.from({length: 44}, (_, i) => `fair_look_${i+1}.png`);
     renderMassiveStack('fairStack', fairFiles, { width: 190 });
 
+    // Ghost Model: 支持 190 张，但如果加载失败会自动移除幻灯片
     const ghostW = document.getElementById('ghostWrapper');
-    for(let i=1; i<=8; i++) {
-        let n = i.toString().padStart(2, '0');
-        ghostW.innerHTML += `<div class="swiper-slide"><img src="ghost_model_${n}.png" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400?text=Ghost+${n}'"></div>`;
+    for(let i=1; i<=190; i++) {
+        ghostW.innerHTML += `
+            <div class="swiper-slide">
+                <img src="ghost_model_${i}.png" class="w-full h-full object-cover" 
+                     onerror="this.closest('.swiper-slide').remove()">
+            </div>`;
     }
 
     const homeW = document.getElementById('homeWrapper');
     for(let i=1; i<=25; i++) {
-        let n = i.toString().padStart(2, '0');
-        homeW.innerHTML += `<div class="swiper-slide"><img src="home_sim_${n}.png" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x400?text=Home+${n}'"></div>`;
+        let n = i;
+        homeW.innerHTML += `<div class="swiper-slide"><img src="home_sim_${n}.png" class="w-full h-full object-cover" onerror="this.closest('.swiper-slide').remove()"></div>`;
     }
 
-    new Swiper('.ghost-swiper', { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 20, loop: true, loopedSlides: 4 });
-    new Swiper('.home-swiper', { slidesPerView: 'auto', centeredSlides: true, spaceBetween: 20, loop: true, loopedSlides: 4 });
+    // 初始化 Swiper
+    // 设置 observer: true 以便在内容被移除后自动更新
+    new Swiper('.ghost-swiper', { 
+        slidesPerView: 'auto', 
+        centeredSlides: true, 
+        spaceBetween: 20, 
+        loop: false, // 动态移除内容时 loop 容易出错，改为非 loop 模式
+        observer: true,
+        observeParents: true
+    });
+    
+    new Swiper('.home-swiper', { 
+        slidesPerView: 'auto', 
+        centeredSlides: true, 
+        spaceBetween: 20, 
+        loop: false, 
+        observer: true,
+        observeParents: true
+    });
 </script>
 
 </body>
