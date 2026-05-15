@@ -108,7 +108,7 @@
             transform: scale(0.85);
             border-radius: 1.2rem;
             overflow: hidden;
-            width: 320px; /* 宽度略微增加，适应垂直排列 */
+            width: 320px;
             aspect-ratio: 3/4;
             background: #fff;
             border: 1px solid #e2e8f0;
@@ -170,19 +170,20 @@
                 AI 辅助服装设计与资产聚合平台<strong>「巴拉智绘」</strong>已正式立项并进入全面建设阶段。该平台旨在重塑服装设计流程，实现从“灵感线稿”到“成衣效果”的高效转化。目前，系统的底层架构建设与初期品牌视觉标识（Logo）设计已取得阶段性成果，正处于稳步迭代中。
             </p>
 
-            <div class="space-y-8 mt-12">
+            <div class="space-y-12 mt-12">
                 <div>
                     <div class="tag bg-indigo-50 text-indigo-600 border-indigo-100">巴拉智绘系统界面预览</div>
                     <img src="zhihui_demo.png" class="img-full border" alt="智绘系统界面预览" onerror="this.style.display='none'">
                 </div>
 
-                <div>
+                <!-- 修改：品牌视觉规范图片改为垂直排列 -->
+                <div class="space-y-6">
                     <div class="tag bg-indigo-50 text-indigo-600 border-indigo-100">品牌视觉规范</div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <img src="logo_1.png" class="rounded-xl shadow-sm border w-full" alt="Logo 1" onerror="this.style.display='none'">
-                        <img src="logo_2.png" class="rounded-xl shadow-sm border w-full" alt="Logo 2" onerror="this.style.display='none'">
-                        <img src="logo_3.png" class="rounded-xl shadow-sm border w-full" alt="Logo 3" onerror="this.style.display='none'">
-                        <img src="logo_4.png" class="rounded-xl shadow-sm border w-full" alt="Logo 4" onerror="this.style.display='none'">
+                    <div class="flex flex-col gap-6">
+                        <img src="logo_1.png" class="rounded-2xl shadow-md border w-full h-auto object-cover" alt="Logo 规范 1" onerror="this.style.display='none'">
+                        <img src="logo_2.png" class="rounded-2xl shadow-md border w-full h-auto object-cover" alt="Logo 规范 2" onerror="this.style.display='none'">
+                        <img src="logo_3.png" class="rounded-2xl shadow-md border w-full h-auto object-cover" alt="Logo 规范 3" onerror="this.style.display='none'">
+                        <img src="logo_4.png" class="rounded-2xl shadow-md border w-full h-auto object-cover" alt="Logo 规范 4" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -245,7 +246,7 @@
 
         <hr class="my-16 border-slate-100">
 
-        <!-- 3D 轮播：垂直叠放 -->
+        <!-- 3D 轮播 -->
         <div class="space-y-20 mb-20">
             <div>
                 <div class="tag">Ghost Model 3D 试拍库 (3:4)</div>
@@ -322,7 +323,7 @@
         </div>
         
         <div class="space-y-24">
-            <!-- 小游戏：叠放 -->
+            <!-- 小游戏 -->
             <div class="space-y-10">
                 <div>
                     <div class="tag">微信小游戏 UI 全新升级</div>
@@ -345,7 +346,7 @@
             
             <hr class="border-slate-100">
 
-            <!-- 滨江地图：叠放 -->
+            <!-- 滨江地图 -->
             <div class="space-y-10">
                 <div>
                     <div class="tag">滨江快闪店交互地图</div>
