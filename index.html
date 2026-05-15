@@ -75,7 +75,7 @@
             border: 1px solid #e0e7ff;
         }
 
-        /* 叠放容器 */
+        /* 叠放容器：4月排版风格 */
         .massive-stack {
             position: relative;
             height: 800px;
@@ -103,7 +103,7 @@
         /* Swiper 科技感滑动 */
         .tech-swiper { width: 100%; padding: 20px 0; overflow: hidden; }
         .tech-swiper .swiper-slide {
-            transition: 0.4s;
+            transition: 0.4s ease;
             opacity: 0.4;
             transform: scale(0.85);
             border-radius: 1.2rem;
@@ -113,11 +113,13 @@
             background: #fff;
             border: 1px solid #e2e8f0;
         }
+        /* 亮起选中的图片 */
         .tech-swiper .swiper-slide-active {
-            opacity: 1;
-            transform: scale(1);
+            opacity: 1 !important;
+            transform: scale(1) !important;
             box-shadow: 0 15px 40px rgba(14, 165, 233, 0.25);
             border-color: #0ea5e9;
+            z-index: 10;
         }
 
         video {
@@ -189,7 +191,7 @@
         </div>
     </div>
 
-    <!-- 二、效率革命：426 订货会 -->
+    <!-- 二、效率革命 -->
     <div class="glass-card">
         <div class="section-title">
             <i class="fas fa-bolt"></i>
@@ -245,7 +247,7 @@
 
         <hr class="my-16 border-slate-100">
 
-        <!-- 3D 轮播 -->
+        <!-- 3D 轮播 (Ghost & Home) -->
         <div class="space-y-20 mb-20">
             <div>
                 <div class="tag">Ghost Model 3D 试拍库</div>
@@ -308,7 +310,6 @@
                     专为社媒定制的竖屏短视频。通过AI模拟真实面料下垂感与折痕，精准传达材质的亲肤质感，有效降低打样沟通成本。
                 </p>
             </div>
-            <!-- 9:16 视频容器 -->
             <div class="max-w-[300px] w-full shadow-2xl rounded-[2.5rem] overflow-hidden border-8 border-white bg-black aspect-[9/16]">
                 <video autoplay loop muted playsinline class="w-full h-full object-cover">
                     <source src="soft_denim.mp4" type="video/mp4">
@@ -325,7 +326,7 @@
         </div>
         
         <div class="space-y-24">
-            <!-- 小游戏 -->
+            <!-- 小游戏：调整为两行五列展示 -->
             <div class="space-y-10">
                 <div>
                     <div class="tag">微信小游戏 UI 全新升级</div>
@@ -333,10 +334,11 @@
                         配合全新 Logo 体系完成 UI 全面翻新。目前工信部审核中，预计于 <span class="text-indigo-600 font-bold underline decoration-indigo-200 decoration-4">5.25 温州线下活动</span> 正式发布上线。
                     </p>
                 </div>
-                <div class="grid grid-cols-4 md:grid-cols-8 gap-3">
+                <!-- 改为 grid-cols-5 确保两行展示 -->
+                <div class="grid grid-cols-5 gap-3 mb-10">
                     <script>
-                        for(let i=1; i<=8; i++) {
-                            document.write(`<img src="game_ui_${i}.png" class="rounded-xl shadow-md hover:scale-110 transition-transform duration-300" onerror="this.style.display='none'">`);
+                        for(let i=1; i<=10; i++) {
+                            document.write(`<img src="game_ui_${i}.png" class="rounded-xl shadow-md hover:scale-110 transition-transform duration-300 w-full" onerror="this.style.display='none'">`);
                         }
                     </script>
                 </div>
@@ -359,7 +361,6 @@
                 <div class="relative w-full max-w-4xl mx-auto rounded-[4rem] overflow-hidden shadow-2xl border-4 border-slate-900 bg-slate-800">
                     <img src="phone.png" class="relative z-20 w-full h-auto pointer-events-none" alt="Phone Frame">
                     <div class="absolute inset-0 z-10 overflow-x-auto overflow-y-hidden no-scrollbar flex items-center">
-                        <!-- 已修正为 .png 后缀 -->
                         <img src="binjiang_map.png" style="height: 1060px; max-height: 98.7%;" class="w-auto max-w-none block" alt="Map">
                     </div>
                 </div>
@@ -397,6 +398,7 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+    // 渲染订货会堆叠
     function renderMassiveStack(containerId, fileArray, config = {}) {
         const container = document.getElementById(containerId);
         if (!container) return;
@@ -426,7 +428,7 @@
     const fairFiles = Array.from({length: 44}, (_, i) => `fair_look_${i+1}.png`);
     renderMassiveStack('fairStack', fairFiles, { width: 190 });
 
-    // Ghost Model: 支持 190 张，但如果加载失败会自动移除幻灯片
+    // Ghost Model: 脚本尝试加载190张，自动剔除不存在的
     const ghostW = document.getElementById('ghostWrapper');
     for(let i=1; i<=190; i++) {
         ghostW.innerHTML += `
@@ -436,31 +438,31 @@
             </div>`;
     }
 
+    // Home Line: 物理模拟打样
     const homeW = document.getElementById('homeWrapper');
     for(let i=1; i<=25; i++) {
-        let n = i;
-        homeW.innerHTML += `<div class="swiper-slide"><img src="home_sim_${n}.png" class="w-full h-full object-cover" onerror="this.closest('.swiper-slide').remove()"></div>`;
+        homeW.innerHTML += `
+            <div class="swiper-slide">
+                <img src="home_sim_${i}.png" class="w-full h-full object-cover" 
+                     onerror="this.closest('.swiper-slide').remove()">
+            </div>`;
     }
 
-    // 初始化 Swiper
-    // 设置 observer: true 以便在内容被移除后自动更新
-    new Swiper('.ghost-swiper', { 
-        slidesPerView: 'auto', 
-        centeredSlides: true, 
-        spaceBetween: 20, 
-        loop: false, // 动态移除内容时 loop 容易出错，改为非 loop 模式
+    // 初始化 Swiper 
+    // 核心：设置 watchSlidesProgress 以确保 activeSlideClass 正确触发
+    const swiperOptions = {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 20,
         observer: true,
-        observeParents: true
-    });
-    
-    new Swiper('.home-swiper', { 
-        slidesPerView: 'auto', 
-        centeredSlides: true, 
-        spaceBetween: 20, 
-        loop: false, 
-        observer: true,
-        observeParents: true
-    });
+        observeParents: true,
+        watchSlidesProgress: true,
+        slideToClickedSlide: true,
+        initialSlide: 0
+    };
+
+    new Swiper('.ghost-swiper', swiperOptions);
+    new Swiper('.home-swiper', swiperOptions);
 </script>
 
 </body>
